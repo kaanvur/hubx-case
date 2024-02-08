@@ -1,0 +1,72 @@
+.menu {
+  scroll-snap-type: x mandatory;
+  overflow: auto;
+  display: flex;
+}
+
+.menu > li {
+  scroll-snap-align: center;
+  flex-grow: 1;
+  background-color: white;
+}
+
+a {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 16px;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+
+  padding: 33px 5px;
+
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #000;
+  text-decoration: none;
+
+  border: 1px solid #f5f5f7;
+
+  transition: border 0.2s linear;
+}
+
+.active a {
+  background: #0381ff08;
+}
+
+a:hover {
+  border: 1px solid #0381ff;
+}
+
+svg * {
+  transition:
+    fill 1s ease,
+    stroke-dashoffset 0.5s ease;
+}
+
+.animated-circle {
+  transform-origin: center;
+  rotate: -90deg;
+
+  stroke: #0381ff;
+  stroke-dasharray: 174;
+  stroke-dashoffset: -174;
+  stroke-opacity: 1;
+}
+
+.active .animated-circle {
+  stroke-dashoffset: 0;
+}
+
+.active svg path {
+  fill: #0381ff;
+}
+
+@media screen and (width <= 800px) {
+  a {
+    flex-wrap: nowrap;
+    padding: 33px;
+    white-space: nowrap;
+  }
+}
